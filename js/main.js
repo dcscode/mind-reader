@@ -1,8 +1,5 @@
 //get all the elements
 
-const pages = ["page1", "page2", "page3", "page4", "page5", "page6"]; //index 0 - 5
-
-
 //current page
 //certain elements are hidden depending on which page (1-6)
 const gamePage = document.getElementById("game-page");
@@ -61,7 +58,7 @@ nextButton.addEventListener("click", //updatePageContent function
 
 function startGame() { //start game when you click go
     //maybe bundle into INIT
-    
+
 
 }
 

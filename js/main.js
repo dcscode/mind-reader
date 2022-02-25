@@ -1,6 +1,7 @@
 //get all the elements
 
 //current page
+let currentPage = null;
 //certain elements are hidden depending on which page (1-6)
 const gamePage = document.getElementById("game-page");
 
@@ -32,7 +33,7 @@ const goOrRefreshButton = document.getElementById("go-or-refresh");
 
 
 
-
+/*
 goOrRefreshButton.addEventListener("click", //startGame function
 );
 
@@ -51,6 +52,8 @@ nextButton.addEventListener("click", //move forward; next function
 nextButton.addEventListener("click", //updatePageContent function
 );
 
+*/
+
 
 
 
@@ -58,12 +61,18 @@ nextButton.addEventListener("click", //updatePageContent function
 
 function startGame() { //start game when you click go
     //maybe bundle into INIT
-
+    currentPage = pages.page1[0];
+    updatePage();
 
 }
 
 function next() { //next page/reveal; move forward
-
+    for (let page of pages ) {
+        if (currentPage != page) {
+            currentPage = page;
+        }
+        return currentPage;
+    }
 }
 
 function goBack() { //return to the previous page
@@ -75,6 +84,15 @@ function reset() { //resets the game at the end, when go back on page 6 is click
 }
 
 function updatePage() { //update page content
+    instructions.textContent = currentPage.instructions;
+        if(currentPage.nextButton != null) {
+            nextButton.textContent = currentPage.nextButton;
+        }
+        else {
+            nextButton.style.visibility = "hidden";
+        }
+    
+
 
 } 
 

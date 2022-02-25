@@ -12,7 +12,17 @@ functions
     - display correct view on load/after every state change
 multiples of 9 must have same symbol
 
-## Needs
+# Functionality
+Click button to start
+Click button to change page
+Click button to go back
+update content on page
+randomize symbol assignments every game
+scroll bar
+reset button at end
+
+
+
 
 
 

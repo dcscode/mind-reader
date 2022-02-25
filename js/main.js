@@ -32,7 +32,7 @@ const goOrRefreshButtonDisplay = document.getElementById("go-or-refresh");
 //current page
 const pagesObject = pagesJSONObject["pages"];
 let currentPage = null;
-
+let currentPageIndex = pagesJSONObject["pages"].indexOf(pagesObject);
 window.onload = init();
 
 
@@ -59,7 +59,7 @@ nextButtonDisplay.addEventListener("click", updatePage() //updatePageContent fun
 
 
 function init() { //initialize webpage
-    //currentPage = pagesObject[0];
+    currentPage = pagesObject[0];
     goOrRefreshButtonDisplay.addEventListener("click", startGame());
 }
 
@@ -71,7 +71,6 @@ function startGame() { //start game when you click go
 }
 
 function next() { //next page/reveal; move forward
-    currentPage = pagesObject[0];
     for (let i = 0; i <= pagesObject.length - 1; i++)
         if (pagesObject[i] = currentPage) {
             updatePage();
@@ -79,9 +78,10 @@ function next() { //next page/reveal; move forward
         else {
             currentPage = pagesObject[i];
         }
+    currentPageIndex += 1;
     //move currentPage forward
     //increment the index in currentPage
-    
+
 }
 
 function goBack() { //return to the previous page

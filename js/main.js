@@ -37,6 +37,7 @@ window.onload = init();
 
 
  //startGame
+goOrRefreshButtonDisplay.addEventListener("click", next);
 /*
 
 goOrRefreshButtonDisplay.addEventListener("click", //goBack function
@@ -60,10 +61,11 @@ nextButtonDisplay.addEventListener("click", updatePage //updatePageContent funct
 
 function init() { //initialize webpage
     currentPageIndex = 0;
-    startGame();
+    currentPage = pagesObject[currentPageIndex];
     updatePage();
+
     
-    //goOrRefreshButtonDisplay.addEventListener("click", startGame);
+    
 }
 
 
@@ -71,7 +73,8 @@ function init() { //initialize webpage
 
 function startGame() { //start game when you click go
     //maybe bundle into INIT
-    currentPage = pagesObject[currentPageIndex];
+    next();
+
 }
 
 function next() { //next page/reveal; move forward
@@ -79,6 +82,7 @@ function next() { //next page/reveal; move forward
     //currentPage = pagesObject[index];
     currentPageIndex += 1;
     currentPage = pagesObject[currentPageIndex];
+    updatePage();
     //currentPage[currentPageIndex]; 
     //move currentPage forward
     //increment the index in currentPage

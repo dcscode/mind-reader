@@ -37,6 +37,7 @@ window.onload = init();
 
 
  //startGame
+goOrRefreshButtonDisplay.addEventListener("click", next);
 /*
 
 goOrRefreshButtonDisplay.addEventListener("click", //goBack function
@@ -49,18 +50,22 @@ goOrRefreshButtonDisplay.addEventListener("click", //randomize function; after r
 );
 */
 
-nextButtonDisplay.addEventListener("click", next() //move forward; next function
+nextButtonDisplay.addEventListener("click", next //move forward; next function
 );
 
 /*
-nextButtonDisplay.addEventListener("click", updatePage() //updatePageContent function
+nextButtonDisplay.addEventListener("click", updatePage //updatePageContent function
 );
 */
 
 
 function init() { //initialize webpage
-    currentPage = pagesObject[0];
-    goOrRefreshButtonDisplay.addEventListener("click", startGame());
+    currentPageIndex = 0;
+    currentPage = pagesObject[currentPageIndex];
+    updatePage();
+
+    
+    
 }
 
 
@@ -68,19 +73,17 @@ function init() { //initialize webpage
 
 function startGame() { //start game when you click go
     //maybe bundle into INIT
+    next();
+
 }
 
 function next() { //next page/reveal; move forward
-    for (let i = 0; i <= pagesObject.length - 1; i++)
-        if (pagesObject[i] = currentPage) {
-            updatePage();
-        }
-        else {
-            currentPage = pagesObject[i];
-        }
+    //pagesObject[index] = page array
+    //currentPage = pagesObject[index];
     currentPageIndex += 1;
+    currentPage = pagesObject[currentPageIndex];
+    updatePage();
     //currentPage[currentPageIndex]; 
-    //recursion needed?
     //move currentPage forward
     //increment the index in currentPage
 

@@ -79,6 +79,7 @@ function next() { //next page/reveal; move forward
             currentPage = pagesObject[i];
         }
     currentPageIndex += 1;
+    currentPage[currentPageIndex]; //recursion needed?
     //move currentPage forward
     //increment the index in currentPage
 

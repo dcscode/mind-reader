@@ -33,56 +33,55 @@ const goOrRefreshButtonDisplay = document.getElementById("go-or-refresh");
 const pagesObject = pagesJSONObject["pages"];
 let currentPage = null;
 
-//window.onload = init();
+window.onload = init();
 
+
+ //startGame
+/*
+
+goOrRefreshButtonDisplay.addEventListener("click", //goBack function
+);
+
+goOrRefreshButtonDisplay.addEventListener("click", //reset function
+);
+
+goOrRefreshButtonDisplay.addEventListener("click", //randomize function; after reset/part of reset
+);
+*/
+
+nextButtonDisplay.addEventListener("click", next() //move forward; next function
+);
 
 /*
-goOrRefreshButton.addEventListener("click", startGame()); //startGame
-
-
-goOrRefreshButton.addEventListener("click", //goBack function
-);
-
-goOrRefreshButton.addEventListener("click", //reset function
-);
-
-goOrRefreshButton.addEventListener("click", //randomize function; after reset/part of reset
-);
-
-
-nextButton.addEventListener("click", next() //move forward; next function
-);
-
-
-nextButton.addEventListener("click", updatePage() //updatePageContent function
+nextButtonDisplay.addEventListener("click", updatePage() //updatePageContent function
 );
 */
 
 
-/*
 function init() { //initialize webpage
-    
-    startGame();
+    //currentPage = pagesObject[0];
+    goOrRefreshButtonDisplay.addEventListener("click", startGame());
 }
 
-*/
 
 
 
 function startGame() { //start game when you click go
     //maybe bundle into INIT
-    currentPage = pagesObject[0];
-    updatePage();
-
 }
 
 function next() { //next page/reveal; move forward
-    for (let i = 0; i <= pagesObject.length - 1; i++) {
-        if (pagesObject[i] != currentPage) {
+    currentPage = pagesObject[0];
+    for (let i = 0; i <= pagesObject.length - 1; i++)
+        if (pagesObject[i] = currentPage) {
+            updatePage();
+        }
+        else {
             currentPage = pagesObject[i];
         }
-    }
-    //updatePage();
+    //move currentPage forward
+    //increment the index in currentPage
+    
 }
 
 function goBack() { //return to the previous page
